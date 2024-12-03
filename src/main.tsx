@@ -18,7 +18,7 @@ const projectId = '389c799bb1c13b6729d919d49c10aee9'
 const metadata = {
   name: 'LuckyToken',
   description: 'AppKit Example',
-  url: 'https://reown.com/appkit', // origin must match your domain & subdomain
+  url: 'https://reown.com/appkit',
   icons: ['https://assets.reown.com/reown-profile-pic.png']
 }
 
@@ -38,7 +38,12 @@ createAppKit({
   projectId,
   metadata,
   features: {
-    analytics: true 
+    analytics: true
+  },
+  themeMode: 'light',
+  themeVariables: {
+    '--w3m-accent': '#0093e7',
+    '--w3m-border-radius-master': '1px'
   }
 })
 
