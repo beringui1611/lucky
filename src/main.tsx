@@ -11,7 +11,7 @@ import { createAppKit } from '@reown/appkit/react';
 
 const queryClient = new QueryClient()
 
-const projectId = '389c799bb1c13b6729d919d49c10aee9'
+const projectId = `${import.meta.env.VITE_API_KEY}`;
 
 const metadata = {
   name: 'LuckyToken',
