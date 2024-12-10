@@ -1,7 +1,6 @@
 import { Header } from "./components/Header";
 import USDTFLAG from './assets/usdt.png';
 import LUCKYFLAG from './assets/logo-rounded.png';
-// import ArrowIcon from './assets/Working_on_The_beach.png';
 import Coin from './assets/coins.png';
 import { NextChain } from "./components/NextChain";
 import { useMemo, useState } from "react";
