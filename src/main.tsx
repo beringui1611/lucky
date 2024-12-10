@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { WagmiProvider } from 'wagmi'
-import { arbitrum, mainnet } from '@reown/appkit/networks'
+import { bscTestnet} from '@reown/appkit/networks'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 import { createAppKit } from '@reown/appkit/react';
@@ -11,21 +11,17 @@ import { createAppKit } from '@reown/appkit/react';
 
 const queryClient = new QueryClient()
 
-// 1. Get projectId from https://cloud.reown.com
 const projectId = '389c799bb1c13b6729d919d49c10aee9'
 
-// 2. Create a metadata object - optional
 const metadata = {
   name: 'LuckyToken',
   description: 'AppKit Example',
-  url: 'https://reown.com/appkit',
-  icons: ['https://assets.reown.com/reown-profile-pic.png']
+  url: 'http://localhost:5173',
+  icons: ['']
 }
 
-// 3. Set the networks
-const networks = [mainnet, arbitrum]
+const networks = [bscTestnet]
 
-// 4. Create Wagmi Adapter
 const wagmiAdapter = new WagmiAdapter({
   networks,
   projectId,
@@ -34,7 +30,7 @@ const wagmiAdapter = new WagmiAdapter({
 
 createAppKit({
   adapters: [wagmiAdapter],
-  networks: [mainnet, arbitrum],
+  networks: [bscTestnet],
   projectId,
   metadata,
   features: {
