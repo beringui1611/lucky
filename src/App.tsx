@@ -123,7 +123,6 @@ function App() {
             <div className="flex gap-2 text-sm text-slate-400">
               <label>Current: ${currentPrice.toFixed(2)}</label>
               <label>Next: ${(currentPrice + 0.01).toFixed(2)}</label>
-              <label>Listing on DEX: $2.00</label>
             </div>
           </div>
 
@@ -142,7 +141,7 @@ function App() {
                     onChange={(e) => setAmount(Number(e.target.value))}
                   />
                 </div>
-                <div className="bg-slate-950 p-2 rounded-lg">
+                <div className="bg-slate-950 p-2 rounded-lg flex flex-col items-center justify-center">
                   <button className="flex gap-2 font-semibold text-xl text-slate-400 items-center justify-center">
                     <img
                       className="w-6"
