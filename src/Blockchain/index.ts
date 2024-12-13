@@ -1,7 +1,7 @@
 import { useReadContract} from "wagmi";
 import AbiLucky from './AbiLucky.json';
 
-export const ADDRESS_LCK = "0xa26ac75EF8BbD3DCFB56fe10027433A0e5069B21";
+export const ADDRESS_LCK = "0x68c7f6e29a4E171F088111Cd96BA84219f14B70e";
 export const ADDRESS_USDT = "0x55d398326f99059fF775485246999027B3197955";
 
 export const usePrice = () => {
