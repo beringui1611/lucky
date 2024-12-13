@@ -1,4 +1,4 @@
-import TokenomicsImage from '../../assets/tokenomics.jpg';
+import TokenomicsImage from '../../assets/tokenomics.png';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import SavingsIcon from '@mui/icons-material/Savings';
@@ -49,13 +49,15 @@ export default function Card() {
               </dl>
             </div>
           </div>
+          <div className='ml-32'>
           <img
             alt="Product screenshot"
             src={TokenomicsImage}
             width={500}
             height={500}
-            className="w-[20rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[30rem] md:-ml-4 lg:-ml-0"
+            className="w-[20rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[30rem] md:-ml-24 lg:-ml-20  md:mt-64"
           />
+          </div>
         </div>
       </div>
     </div>

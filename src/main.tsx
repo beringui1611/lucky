@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { WagmiProvider } from 'wagmi'
-import { bscTestnet} from '@reown/appkit/networks'
+import { bsc} from '@reown/appkit/networks'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 import { createAppKit } from '@reown/appkit/react';
@@ -20,7 +20,7 @@ const metadata = {
   icons: ['']
 }
 
-const networks = [bscTestnet]
+const networks = [bsc]
 
 const wagmiAdapter = new WagmiAdapter({
   networks,
@@ -30,7 +30,7 @@ const wagmiAdapter = new WagmiAdapter({
 
 createAppKit({
   adapters: [wagmiAdapter],
-  networks: [bscTestnet],
+  networks: [bsc],
   projectId,
   metadata,
   features: {
