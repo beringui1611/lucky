@@ -16,8 +16,8 @@ const projectId = `${import.meta.env.VITE_API_KEY}`;
 const metadata = {
   name: 'LuckyToken',
   description: 'LuckyToken your favorite token, go to the moon! 🚀',
-  url: 'http://lucky-interface.vercel.app/',
-  icons: ['']
+  url: 'http://payment.luckystudios.io/',
+  icons: ['https://payment.luckystudios.io/assets/Logo-Bi8AqlV2.png']
 }
 
 const networks = [bsc]
