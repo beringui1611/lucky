@@ -196,7 +196,10 @@ function App() {
           {/* Informações do Saldo */}
           <div className="p-2 w-full flex flex-col items-center justify-center">
             <h3 className="text-white text-xl font-bold">My Balance</h3>
-            <p className="text-white">LCK {(Number(balance) / 1e18).toFixed(2)}</p>
+            <p className="text-white">LCK 
+              {
+              (Number(Number(balance) >= 0 ? balance : "0") / 1e18).toFixed(2) 
+              }</p>
             {/* Botão Centralizado na Parte Inferior */}
             <div className="col-span-2 flex justify-center items-center mt-4">
               <button
@@ -217,7 +220,7 @@ function App() {
                 <p><span className="text-green-400">Released on: </span>{String(lockInfo.releaseDate)}</p>
               </div>
             ) : (
-              "Loading..."
+              <p className="text-medium animate-pulse">Loading...</p>
             )}
           </div>
       </div>
