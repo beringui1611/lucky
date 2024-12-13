@@ -15,7 +15,7 @@ const projectId = `${import.meta.env.VITE_API_KEY}`;
 
 const metadata = {
   name: 'LuckyToken',
-  description: 'AppKit Example',
+  description: 'LuckyToken your favorite token, go to the moon! 🚀',
   url: 'http://localhost:5173',
   icons: ['']
 }

@@ -49,7 +49,7 @@ export default function Card() {
               </dl>
             </div>
           </div>
-          <div className='ml-32'>
+          <div className='md:ml-32 flex justify-center'>
           <img
             alt="Product screenshot"
             src={TokenomicsImage}
