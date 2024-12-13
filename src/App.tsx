@@ -122,7 +122,7 @@ function App() {
             <div className="border-2 border-medium w-[90%] mb-2 rounded-md" >
             <div className="flex gap-2 text-sm text-slate-400 bg-medium bg-opacity-30 p-1" style={{width: `${supply}%`}}>
               <div className="flex w-screen justify-between">
-                <label className="ml-5 md:ml-16">Current: ${currentPrice.toFixed(2)}K</label>
+                <label className="ml-5 md:ml-16">Current: ${currentPrice.toFixed(2)}</label>
                 <label className="ml-5 md:ml-36">Next: ${(currentPrice + 0.01).toFixed(2)}/100K</label>
                 <label className="ml-5 md:ml-36">Next: ${(currentPrice + 0.02).toFixed(2)}/1M</label>
                 <label className="ml-5 md:ml-36">Next: ${(currentPrice + 0.03).toFixed(2)}/10M</label>
