@@ -109,6 +109,12 @@ function App() {
     return { lockDate: formattedLockDate, releaseDate: formattedReleaseDate };
   }, [timeLock]);
 
+  function accountSell(){
+    return Math.min(
+      (Number(supply) / 200_000_000 * 10 ** 18) * 100,
+      100)
+  }
+
   return (
     <div className="bg-medium min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <Header />
@@ -130,7 +136,10 @@ function App() {
               LCK ${formatLargeNumber(Number(supply))} / 200M
             </p>
             <div className="border-2 border-medium w-[90%] mb-2 rounded-md" >
-            <div className="flex gap-2 text-sm text-slate-400 bg-medium bg-opacity-30 p-1" style={{width: `${supply}%`}}>
+            <div className="flex gap-2 text-sm text-slate-400 bg-medium bg-opacity-30 p-1"
+             style={{
+              width: `${accountSell}%`,
+            }}>
               <div className="flex w-screen justify-between">
                 <label className="ml-5 md:ml-16">Current: ${currentPrice.toFixed(3)}</label>
                 <label className="ml-5 md:ml-36">Next: ${(currentPrice + 0.001).toFixed(3)}/100K</label>
