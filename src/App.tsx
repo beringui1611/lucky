@@ -128,7 +128,7 @@ function App() {
         src={Coin}
         alt="lucky-coins-3d"
       />
-      <div className="flex flex-col mt-20 p-2 md:w-6/12">
+      <div className="flex flex-col mt-20 p-2 md:w-6/12  w-[99.9%]">
         <div className="bg-slate-800 flex flex-col items-center p-2 rounded-md">
           <div className="flex flex-col items-center w-full bg-slate-900 rounded-md">
             <h4 className="text-white text-xl font-bold">Lucky Private Sale</h4>
@@ -140,11 +140,11 @@ function App() {
              style={{
               width: `${accountSell}%`,
             }}>
-              <div className="flex w-screen justify-between">
-                <label className="ml-5 md:ml-16">Current: ${currentPrice.toFixed(3)}</label>
-                <label className="ml-5 md:ml-36">Next: ${(currentPrice + 0.001).toFixed(3)}/100K</label>
-                <label className="ml-5 md:ml-36">Next: ${(currentPrice + 0.002).toFixed(3)}/1M</label>
-                <label className="ml-5 md:ml-36">Next: ${(currentPrice + 0.003).toFixed(3)}/10M</label>
+              <div className="flex w-full px-2 justify-between">
+                <label className="ml-2 md:ml-16">Current: ${currentPrice.toFixed(3)}</label>
+                <label className="ml-2 md:ml-36">Next: ${(currentPrice + 0.001).toFixed(3)}<br/>100K</label>
+                <label className="ml-2 md:ml-36">Next: ${(currentPrice + 0.002).toFixed(3)}<br/>1M</label>
+                <label className="ml-2 md:ml-36">Next: ${(currentPrice + 0.003).toFixed(3)}<br/>10M</label>
               </div>
             </div>
             </div>
@@ -215,7 +215,7 @@ function App() {
           </button>
         </div>
       </div>
-
+      
       <div className="w-10/12 bg-slate-800 rounded-lg grid grid-cols-2 justify-around md:w-6/12 p-2">
           {/* Informações do Saldo */}
           <div className="p-2 w-full flex flex-col items-center justify-center">
