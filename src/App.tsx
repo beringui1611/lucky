@@ -33,33 +33,43 @@ function App() {
   };
 
   const handleFullBuy = async () => {
-     
-     let newAmountValidate;
+    try {
+        let newAmountValidate;
 
-     if(!isPayingUSDT){
-        newAmountValidate = amount * currentPrice;
-     }else {
-        newAmountValidate = amount;
-     }
+        // Calcular o valor com base no tipo de pagamento
+        if (!isPayingUSDT) {
+            newAmountValidate = amount * currentPrice;
+        } else {
+            newAmountValidate = amount;
+        }
 
-    await writeContract({
-      address: ADDRESS_USDT,
-      abi: AbiErc20,
-      functionName: "approve",
-      args: [ADDRESS_LCK, BigInt(newAmountValidate) *10n **18n]
-     })
+        // Multiplicar por 10^18 para trabalhar com inteiros e depois converter para BigInt
+        const newAmountInWei = BigInt(Math.floor(newAmountValidate * 10 ** 18));
 
+        // Aprovar o contrato para gastar os tokens
+        await writeContract({
+            address: ADDRESS_USDT,
+            abi: AbiErc20,
+            functionName: "approve",
+            args: [ADDRESS_LCK, newAmountInWei]
+        });
 
-     await writeContract({
-       address: ADDRESS_LCK,
-       abi: AbiLck,
-       functionName: "buy",
-       args: [newAmountValidate *10 **18]
-     })
+        // Comprar os tokens usando o contrato
+        await writeContract({
+            address: ADDRESS_LCK,
+            abi: AbiLck,
+            functionName: "buy",
+            args: [newAmountInWei]
+        });
+        console.log(data, error)
+        console.log('Compra realizada com sucesso:', { newAmountValidate, newAmountInWei });
+        return { data: 'Compra realizada', error: null };
+    } catch (error) {
+        console.error('Erro ao realizar a compra:', error);
+        return { data: null, error };
+    }
+  };
 
-     return {data, error}
-
-  }
 
   const handleClaim = () => {
     writeContract({
