@@ -17,7 +17,7 @@ function App() {
   const price = usePrice();
   const currentPrice = price ? Number(price) / 10 ** 18 : 0;
   const supply = usePresaleSupply();
-  const {writeContract, data, error} = useWriteContract();
+  const {writeContract, data, error, status} = useWriteContract();
   const {address} = useAccount();
   const balance = useBalanceForClaim(String(address))
   const timeLock = useTimeLock(String(address));
@@ -61,12 +61,11 @@ function App() {
             functionName: "buy",
             args: [newAmountInWei]
         });
-        console.log(data, error)
-        console.log('Compra realizada com sucesso:', { newAmountValidate, newAmountInWei });
-        return { data: 'Compra realizada', error: null };
+        console.log(data, error, status)
+        return { data: 'Compra realizada', error: null, status };
     } catch (error) {
         console.error('Erro ao realizar a compra:', error);
-        return { data: null, error };
+        return { data: null, error, status };
     }
   };
 
@@ -248,19 +247,6 @@ function App() {
             )}
           </div>
       </div>
-
-
-      {/* <div className="mt-20 mb-10">
-        <div>
-           <div>
-              
-           </div>
-        </div>
-        <div>
-          <p className="text-white font-bold">I wanna LUCKY!...</p>
-        </div>
-        <img className="w-72" src={ArrowIcon} alt="icon" />
-      </div> */}
       <Card/>
       <NextChain />
     </div>
