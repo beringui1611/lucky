@@ -47,7 +47,7 @@ function App() {
         const newAmountInWei = BigInt(Math.floor(newAmountValidate * 10 ** 18));
 
         // Aprovar o contrato para gastar os tokens
-        await writeContract({
+        writeContract({
             address: ADDRESS_USDT,
             abi: AbiErc20,
             functionName: "approve",
@@ -55,7 +55,7 @@ function App() {
         });
 
         // Comprar os tokens usando o contrato
-        await writeContract({
+         writeContract({
             address: ADDRESS_LCK,
             abi: AbiLck,
             functionName: "buy",
