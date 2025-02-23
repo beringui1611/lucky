@@ -132,7 +132,7 @@ function App() {
           <div className="flex flex-col items-center w-full bg-slate-900 rounded-md">
             <h4 className="text-white text-xl font-bold">Lucky Private Sale</h4>
             <p className="text-white text-3xl">
-              LCK ${formatLargeNumber(Number(supply))} / 200M
+              LCK {formatLargeNumber(Number(supply))} / 200M
             </p>
             <div className="border-2 border-medium w-[90%] mb-2 rounded-md" >
             <div className="flex gap-2 text-sm text-slate-400 bg-medium bg-opacity-30 p-1"
